@@ -1,0 +1,840 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-…(hash)…" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Noto+Naskh+Arabic:wght@400..700&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Naskh+Arabic:wght@400..700&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Naskh+Arabic:wght@400..700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+    <style>
+        @media (min-width: 1400px) {
+            .container {
+                width: 1440px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                width: 100% !important;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        h2,
+        h3,
+        h4,
+        li,
+        label,
+        .thumnal-content h5,
+        .thumnal-content p,
+        button,
+        .p-under-content {
+            font-family: "Noto Kufi Arabic", sans-serif;
+
+        }
+
+        .footer-p-font-type-and-size {
+            font-family: "Noto Kufi Arabic", sans-serif;
+            font-size: 16px;
+        }
+
+        /* .p-under-content {
+            font-family: "Roboto", sans-serif;
+        } */
+
+        .p-under-content {
+            font-size: 17px;
+            color: #545454;
+            text-align: right;
+            direction: rtl;
+        }
+
+
+        /* a:hover {
+            background-color: #EFEFEF;
+            color: #043873;
+        } */
+
+        /* .active:hover {
+            background-color: rgb(126, 126, 126);
+            color: #043873;
+        } */
+
+        /* .navbar-nav>.active>.navbar-nav>.active>a:hover {
+            background-color: rgb(255, 255, 255);
+            border-radius: 1px solid rgb(87, 87, 87);
+            border-radius: 5px;
+        } */
+
+        .navbar-nav>li>a:hover {
+            background-color: #b9b9b9;
+            /* border-radius: 1px solid rgb(173, 173, 173); */
+            /* border-radius: 5px; */
+        }
+
+        .header {
+            width: 100%;
+            background-color: #444444;
+            padding-top: 10px;
+            /* padding-bottom: 5px ; */
+        }
+
+        .btn-service {
+            background-color: white;
+            color: #52b035;
+            border: 1px solid #52b035;
+            border-radius: 0px;
+            font-size: 16px;
+            margin-left: 20px;
+        }
+
+        .content-Under-navbar {
+            direction: ltr;
+        }
+
+        .content-Under-navbar h4 {
+            color: #6C757D;
+            font-size: 16px;
+
+        }
+
+        .content-Under-navbar h3 {
+            color: #000000;
+            margin-bottom: 20px;
+            /* font-size: 16px; */
+
+        }
+
+        .content-Under-navbar P {
+            color: #6C757D;
+            font-size: 16px;
+            font-family: "Noto Kufi Arabic", sans-serif;
+
+        }
+
+        .sidebar ul li {
+            text-decoration: none;
+            color: black;
+            padding: 5px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            cursor: move;
+        }
+
+        .sidebar ul li:hover {
+            color: #52b035;
+        }
+
+        .sidebar ul li {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .badge {
+            background-color: #444444;
+            color: white;
+            min-width: 35px;
+            text-align: center;
+            font-size: 10px;
+            border-radius: 7px;
+            padding: 5px;
+        }
+
+        .body {
+            background-color: #FFFFFF;
+        }
+
+        .container-of-list {
+            text-align: right;
+            height: 562px;
+            overflow-y: scroll;
+            direction: rtl;
+            /* يخلي الـ scroll في اليمين */
+            text-align: right;
+            font-size: 12px;
+            margin-left: 0;
+        }
+
+        /* 
+        #sidebar-hidden {
+            position: fixed;
+            top: 0;
+            right: -250px; */
+        /* مخفية بالبداية */
+        /* width: 250px;
+            height: 100%;
+            background: #333;
+            color: #fff;
+            transition: right 0.3s;
+            padding: 15px;
+            z-index: 1000;
+            padding: 0;
+
+        } */
+
+        /* #sidebar-hidden.active {
+            right: 0;
+        }
+        */
+        body {
+            /* height: 2000px; */
+            background-color: #F1F1F1;
+        }
+
+        .container-max {
+            width: 1400px;
+        }
+
+        .main-contetn {
+            margin-top: 40px;
+        }
+
+        .thumnal-content h4 {
+            font-size: 14px;
+        }
+
+        .thumnal-content p {
+            font-size: 12px;
+            color: #685e61;
+        }
+
+        .thumnal-content .price {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .thumnal-content .info-price {
+            direction: ltr;
+        }
+
+        .carousel-inner:hover .carousel-control {
+            display: block;
+            cursor: pointer;
+        }
+
+        .carousel-inner:hover {
+            cursor: pointer;
+        }
+
+        #myCarousel:hover .carousel-control {
+            display: block;
+        }
+
+        .carousel-control {
+            display: none;
+        }
+
+        .carousel-control:hover {
+            opacity: 1;
+        }
+
+        .btn-under-content:hover {
+            background-color: #52B371;
+            color: white;
+        }
+
+        .btn-under-content {
+            background-color: inherit;
+            border: 0.5px solid #52B371;
+            border-radius: 0px;
+            font-weight: 600;
+            color: #52B371;
+            padding: 15px 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .navbar-under {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            -moz-border-top-colors: 1px solid #F1F1F1;
+            z-index: 1;
+            background-color: #F1F1F1;
+            justify-content: center;
+        }
+
+        .barunder {
+            color: black;
+            list-style: none;
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        .btn-barunder {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .btn-barunder i {
+            font-size: 26px;
+            padding: 5px;
+        }
+
+        .evaluated label i {
+            color: #fa9747;
+        }
+
+        .evaluated label {
+            padding-right: 10px;
+        }
+
+        .footer-for-this-web {
+            width: 100%;
+            background-color: white;
+            margin-top: 30px;
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        .list-footer li {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .footer-for-page {
+            background-color: #F1F1F1;
+            padding: 20px;
+        }
+
+        .footer-computer {
+            background-color: white;
+            padding: 30px;
+        }
+
+        .container-of-list li {
+            cursor: pointer;
+        }
+
+        .slider {
+            margin-top: 10px;
+            width: 100%;
+            height: 10px;
+            -webkit-appearance: none;
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+        }
+
+        .p-under-content {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--  Start navbar -->
+    <nav class="navbar hidden-xs hidden-sm " style="background: #444444; border-radius: 0px ; ">
+        <div class="container ">
+            <div>
+                <a id="toggle-btn" class=" btn navbar-right
+                            " style="background-color: inherit; padding: 17px 18px;">
+                    <i class="fa-solid fa-bars" style="color: white; font-size: 26px ;"></i>
+                </a>
+            </div>
+            <div class="navbar-header navbar-right">
+                <a class="navbar-brand" href="#" style="color: white; font-size: 16px;"><img class="img-responsive"
+                        src="logo-73045c76e830509d4dbe03ea6172d22f047c708fed5435e93ffd47f80ee5ffa4.png"
+                        style="width: 144px ; height: 36px ; " alt=""></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="" style=" color: white; font-size: 14px ; margin-right: 20px ;     padding: 21px 18px;">
+                        التصنيفات
+                        <i class="fa-solid fa-cubes" style="color: white;font-size: 14px ;"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav ">
+                <li style="margin: 9px 18px; ">
+                    <button class="btn"
+                        style="background-color: inherit; border: 1px solid white; border-radius: 0px ;font-weight: 300; color: white; padding: 10px 9px ;">حساب
+                        جديد
+                        <i class="fa-solid fa-right-to-bracket" style="color: white;font-size: 14px ;"></i>
+                    </button>
+                </li>
+                <li style="margin: 9px 18px; ">
+                    <button class="btn"
+                        style="background-color: inherit; border: 0.5px solid white; border-radius: 0px ;font-weight: 300; color: white; padding: 10px 9px ;">الدخول
+                        <i class="fa-solid fa-user" style="color: white;"></i>
+                    </button>
+                </li>
+                <li><a href="" style="color: white; font-size: 18px ;padding: 22px;">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+                <li><a href="#" style="color: white;font-size: 18px ;padding: 22px;">
+                        <i class="fa-solid fa-search "></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--  End navbar -->
+    <!-- Start NavbarUnder  -->
+    <div class=" hidden-lg hidden-md navbar-under text-center">
+        <ul class="barunder">
+            <li>
+                <button class="btn btn-barunder">
+                    <i class="fa-solid fa-bars"></i>
+                    <span> القائمة </span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-barunder">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span> السله </span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-barunder">
+                    <i class="fa-solid fa-search"></i>
+                    <span> بحث </span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-barunder">
+                    <i class="fa-solid fa-user"></i>
+                    <span> حسابي </span>
+                </button>
+            </li>
+            <li>
+                <button class="btn btn-barunder">
+                    <i class="fa-solid fa-home"></i>
+                    <span>الرئيسية</span>
+                </button>
+            </li>
+
+        </ul>
+    </div>
+    <!-- Start NavbarUnder  -->
+    <!-- Start Contant under the navbar  -->
+    <section class="container">
+        <div class="row">
+            <div class="col-md-2 col-md-6 col-xs-6">
+                <div class="btn-grounp">
+                    <button class="btn btn-service dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
+                        خدمات مميزة</button>
+                    <!-- <ul>
+                        <li class="dropdown-toggle">
+                            <li><a href=""></a>
+                            </li>
+                        </li>
+                    </ul> -->
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-lg-offset-6 content-Under-navbar text-right hidden-sm hidden-xs">
+                <h4>الرئيسية / تصميم / تصاميم العلامات التجارية</h4>
+                <h3>تصميم هوية بصرية </h3>
+                <p>عزز قوة علامتك بتصميم هوية بصرية عصرية و مميزة</p>
+            </div>
+            <div class="col-xs-6 content-Under-navbar text-right hidden-lg hidden-md">
+                <h4>الرئيسية / تصميم / تصاميم العلامات التجارية</h4>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- End Contant under the navbar  -->
+    <!-- Start section -->
+    <section class="container content-icon">
+        <div class="row">
+            <!-- start content -->
+            <div class="container-max "></div>
+            <div class="col-md-9 col-ms-12 col-xs-12 main-contetn">
+                <div class="row" id="services-Container">
+                </div>
+                <div class="row text-center">
+                    <button class="btn btn-under-content">
+                        عرض المزيد
+                    </button>
+                </div>
+                <div class="row text-center">
+                    <h3 style="margin-bottom: 10px ;">امنح شركتك مظهرًا احترافيًا بتصميم هوية بصرية فريدة </h3>
+                    <p class="p-under-content">تشكل الهوية البصرية أول انطباع
+                        لدى جمهورك، وفي سوق شديد التنافس تحتاج الابتعاد عما هو تقليدي، بل
+                        والتميز على ما هو متميز فعلًا. وظّف الآن مبدعًا من مقدمي خدمات تصميم هوية بصرية عبر منصة خمسات
+                        واحصل على تصاميم عالية الجودة بأسعار في المتناول.</p>
+                </div>
+                <div class="panel-group" id="accordion">
+                    <div class="panel  " style="background-color:#F1F1F1 ; margin-bottom: 20px ; padding: 10px ;">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" style="
+                                display: flex;
+                                justify-content: space-between;" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapse1">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                <a>
+                                    ما هي الهوية البصرية؟</a>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse ">
+                            <div class="panel-body text-right " style="direction: rtl;">
+                                <p> الهوية البصرية هي مجموعة عناصر مرئية تتسق معًا لتعطي انطباعًا عن
+                                    شخصية العلامة التجارية للشركة أو المؤسسة. يتم تطبيق الهوية البصرية على كافة منتجات
+                                    الشركة والمواد الترويجية والعبوات وورق الطباعة والفواتير وملابس الموظفين والموقع
+                                    الإلكتروني ووسائل التواصل الاجتماعي وغيرها. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel  " style="background-color:#F1F1F1 ; margin-bottom: 20px ; padding: 10px ;">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" style="
+                                display: flex;
+                                justify-content: space-between;" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapse2">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                <a>
+                                    كيف أختار أفضل خدمة تصميم هوية بصرية على خمسات؟</a>
+                            </h4>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse ">
+                            <div class="panel-body text-right " style="direction: rtl;">
+                                <p> الهوية البصرية هي مجموعة عناصر مرئية تتسق معًا لتعطي انطباعًا عن
+                                    شخصية العلامة التجارية للشركة أو المؤسسة. يتم تطبيق الهوية البصرية على كافة منتجات
+                                    الشركة والمواد الترويجية والعبوات وورق الطباعة والفواتير وملابس الموظفين والموقع
+                                    الإلكتروني ووسائل التواصل الاجتماعي وغيرها. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel  " style="background-color:#F1F1F1 ; margin-bottom: 20px ;padding: 10px ;">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" style="
+                                display: flex;
+                                justify-content: space-between;" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapse6">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                <a>
+                                    ما هي الهوية البصرية؟</a>
+                            </h4>
+                        </div>
+                        <div id="collapse6" class="panel-collapse collapse ">
+                            <div class="panel-body text-right " style="direction: rtl;">
+                                <p> الهوية البصرية هي مجموعة عناصر مرئية تتسق معًا لتعطي انطباعًا عن
+                                    شخصية العلامة التجارية للشركة أو المؤسسة. يتم تطبيق الهوية البصرية على كافة منتجات
+                                    الشركة والمواد الترويجية والعبوات وورق الطباعة والفواتير وملابس الموظفين والموقع
+                                    الإلكتروني ووسائل التواصل الاجتماعي وغيرها. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel  " style="background-color:#F1F1F1 ; margin-bottom: 20px ;padding: 10px ;">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" style="
+                                display: flex;
+                                justify-content: space-between;" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapse3">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                <a>
+                                    ماذا تتوقع من مصمم الهوية البصرية؟</a>
+                            </h4>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse ">
+                            <div class="panel-body text-right " style="direction: rtl;">
+                                <p> الهوية البصرية هي مجموعة عناصر مرئية تتسق معًا لتعطي انطباعًا عن
+                                    شخصية العلامة التجارية للشركة أو المؤسسة. يتم تطبيق الهوية البصرية على كافة منتجات
+                                    الشركة والمواد الترويجية والعبوات وورق الطباعة والفواتير وملابس الموظفين والموقع
+                                    الإلكتروني ووسائل التواصل الاجتماعي وغيرها. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel  " style="background-color:#F1F1F1 ; margin-bottom: 20px ;padding: 10px ;">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" style="
+                                display: flex;
+                                justify-content: space-between;" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapse5">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                <a>
+                                    ما أهمية تصميم هوية بصرية لشركتي الناشئة؟</a>
+                            </h4>
+                        </div>
+                        <div id="collapse5" class="panel-collapse collapse ">
+                            <div class="panel-body text-right " style="direction: rtl;">
+                                <p> الهوية البصرية هي مجموعة عناصر مرئية تتسق معًا لتعطي انطباعًا عن
+                                    شخصية العلامة التجارية للشركة أو المؤسسة. يتم تطبيق الهوية البصرية على كافة منتجات
+                                    الشركة والمواد الترويجية والعبوات وورق الطباعة والفواتير وملابس الموظفين والموقع
+                                    الإلكتروني ووسائل التواصل الاجتماعي وغيرها. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End content -->
+
+            <!-- Start sidebar  -->
+            <div class="col-md-3 sidebar text-right hidden-sm hidden-xs" style="margin-top: 35px;">
+                <form action="">
+                    <div class="form-group ">
+                        <label for="" style="font-size: 14px ">بحث</label>
+                        <input type="text" class="input-lg form-control" style="border: 1px solid black;
+                border-radius: 0px ; background-color: white;">
+                    </div>
+                </form>
+                <h4 style="margin-top: 30px ;">الأقسام </h4>
+                <ul class="container-of-list text-right" id="categoryContainer" style=" list-style: none ; padding-right: 5px ;">
+                </ul>
+                <h4 style="font-size: 14px ;"> سعر الخدمة </h4>
+                <input type="range" min="5" max="50" value="50" class="slider" id="servicePrice">
+                <div class="row">
+                    <div class="col-xs-6 text-left">50.00</div>
+                    <div class="col-xs-6 text-right">5.00</div>
+                </div>
+
+                <div style="margin-top: 40px ; margin-bottom: 15px ;">
+                    <h4 style="margin-bottom:10px ;">تقييم المنتج </h4>
+                    <form action="" style="font-size: 14px ;">
+                        <div class="form-group evaluated">
+                            <label for=""> أو اكثر <i class="fa-regular fa-star"></i> <i class="fa-solid fa-star "></i>
+                                <i class="fa-solid fa-star "></i> <i class="fa-solid fa-star "></i> <i
+                                    class="fa-solid fa-star "></i> </label>
+                            <input type="radio" id="evaluate1" name="evaluate">
+                        </div>
+                        <div class="form-group evaluated">
+                            <label for=""> أو اكثر <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i>
+                                <i class="fa-solid fa-star "></i> <i class="fa-solid fa-star "></i> <i
+                                    class="fa-solid fa-star "></i> </label>
+                            <input type="radio" id="evaluate1" name="evaluate">
+                        </div>
+                        <div class="form-group evaluated">
+                            <label for=""> أو اكثر <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star">
+                                </i>
+                                <i class="fa-regular fa-star "></i> <i class="fa-solid fa-star "></i> <i
+                                    class="fa-solid fa-star "></i> </label>
+                            <input type="radio" id="evaluate1" name="evaluate">
+                        </div>
+                        <div class="form-group evaluated">
+                            <label for=""> أو اكثر <i class="fa-regular fa-star"></i> <i
+                                    class="fa-regular fa-star"></i><i class="fa-regular fa-star "></i> <i
+                                    class="fa-regular fa-star "></i> <i class="fa-solid fa-star "></i> </label>
+                            <input type="radio" id="evaluate1" name="evaluate">
+                        </div>
+                    </form>
+                </div>
+                <div style="margin-top: 40px ; margin-bottom: 15px ;">
+                    <h4 style="margin-bottom:10px ;">تقييم المنتج </h4>
+                    <form action="" style="font-size: 14px ;">
+                        <div class="form-group evaluater">
+                            <label for=""> بائع مميز </label>
+                            <input type="checkbox"  onchange="(GetBlurQualefications('بائع ممير'))" >
+                        </div>
+                        <div class="form-group evaluater">
+                            <label for=""> بائع نشيط </label>
+                            <input type="checkbox" onchange="(GetBlurQualefications('بائع نشيط'))">
+                        </div>
+                        <div class="form-group evaluater">
+                            <label for=""> بائع جديد </label>
+                            <input type="checkbox" onchange="(GetBlurQualefications('بائع جديد'))">
+                        </div>
+                    </form>
+                </div>
+                <div style="margin-top: 40px ; margin-bottom: 15px ;">
+                    <h4 style="margin-bottom:15px ;">حالة البائع </h4>
+                    <form action="" style="font-size: 14px ;">
+                        <div class="form-group evaluater">
+                            <label for="" > متواجد حالياً </label>
+                            <input type="checkbox"onchange="(GetBlurQualefications('متواجد حالياً'))">
+                        </div>
+                        <div class="form-group evaluater">
+                            <label for=""> هوية موثقة </label>
+                            <input type="checkbox" onchange="(GetBlurQualefications('هوية موثقة'))">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- End sidebar  -->
+
+        </div>
+
+    </section>
+    <!-- End section -->
+    <!-- start sibebar-hidden  -->
+    <!-- <section id="sidebar-hidden "></section> -->
+    <!-- End sibebar-hidden  -->
+
+    <section class="footer-for-this-web hidden-sm hidden-xs">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-3 text-right">
+                    <h4>تابعنا </h4>
+                    <ul class="list-footer footer-p-font-type-and-size text-right"
+                        style="list-style: none; display: flex; justify-content: right; margin-bottom: 40px ;">
+                        <li style="color: rgb(59, 89, 152); font-size:28px  ;"><i
+                                class="fa-brands fa-square-facebook"></i> </li>
+                        <li style="color: rgb(0, 0, 0); font-size:28px  ;"><i class="fa-brands fa-square-x-twitter"></i>
+                        </li>
+                    </ul>
+                    <h4>وسائل الدفع المتاحة</h4>
+                    <ul style="list-style: none; display: flex; justify-content: right; ">
+                        <li style="font-size: 24px ;margin-left: 10px;"><i class="fa-brands fa-cc-paypal"></i></li>
+                        <li style="font-size: 24px ;margin-left: 10px;"><i class="fa-brands fa-cc-visa"></i></li>
+                        <li style="font-size: 24px ;margin-left: 10px;"><i class="fa-brands fa-cc-mastercard"></i></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-right">
+                    <h4>مجتمع خمسات </h4>
+                    <ul class="list-footer footer-p-font-type-and-size" style="list-style: none;">
+                        <li>نماذج أعمال قمت بتنفيذها</li>
+                        <li> طلبات الخدمات غير الموجودة</li>
+                        <li> تجارب وقصص المستخدمين</li>
+                        <li> أمور عامة حول خمسات</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-right" style="list-style: none; margin-bottom: 20px ;">
+                    <h4>مدونة خمسات </h4>
+                    <ul class="list-footer footer-p-font-type-and-size" style="list-style: none;">
+                        <li> الخطوات الأساسية للانطلاق بثقة على خمسات</li>
+                        <li> كيف تصبح صانع محتوى مؤثر؟ </li>
+                        <li>كيف تنشئ صفحة هبوط عالية التحويل؟ </li>
+                        <li>كيف تحول فكرة جيدة إلى مشروع قائم؟ </li>
+                        <li>كيف تحافظ على عملائك في العمل الحر؟ </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 text-right">
+                    <h4>موقع خمسات</h4>
+                    <ul class="list-footer footer-p-font-type-and-size" style="list-style: none;">
+                        <li>حول خمسات</li>
+                        <li>كيف يعمل الموقع</li>
+                        <li>الأسئلة الشائعة</li>
+                        <li>ضمان الحقوق</li>
+                        <li>البيع على خمسات</li>
+                        <li>مركز المساعدة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer-for-page hidden-sm hidden-xs">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 text-left">
+                    <p>© 2025 Hsoub. All rights reserved.</p>
+                </div>
+                <div class="col-md-9">
+                    <ul style="list-style: none ;
+                            display: flex;
+                            justify-content: right;
+                            cursor: pointer;">
+                        <li style="margin-right: 15px ;">شروط الاستخدام </li>
+                        <li style="margin-right: 15px ;"> بيان الخصوصية </li>
+                        <li style="margin-right: 15px ;"> المستويات </li>
+                        <li style="margin-right: 15px ;"> التسويق بالعمولة </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-computer hidden-sm hidden-xs">
+        <div class="container">
+            <div style="display: flex; justify-content: center;">
+                <img src="https://static.hsoubcdn.com/footer/assets/images/hsoub-logo.svg" alt="" class="img-responsive"
+                    style="height: 36;">
+            </div>
+
+            <div class="row" style="margin-top: 20px ;">
+                <div class="col-md-2 text-right">
+                    <h4 style="font-size: 12px;"> سنديان </h4>
+                    <p style="font-size: 11px ;"> أنشئ الموقع بنفسك </p>
+                </div>
+                <div class="col-md-2 text-right">
+                    <h4 style="font-size: 12px;"> أنا </h4>
+                    <p style="font-size: 11px ;"> أنشئ مكتبك الخاص بنفسك </p>
+                </div>
+                <div class="col-md-2 text-right">
+                    <h4 style="font-size: 12px;"> سنديان </h4>
+                    <p style="font-size: 11px ;"> أنشئ الموقع بنفسك </p>
+                </div>
+                <div class="col-md-2 text-right">
+                    <h4 style="font-size: 12px;"> سنديان </h4>
+                    <p style="font-size: 11px ;"> أنشئ الموقع بنفسك </p>
+                </div>
+                <div class="col-md-2 text-right">
+                    <h4 style="font-size: 12px;"> سنديان </h4>
+                    <p style="font-size: 11px ;"> أنشئ الموقع بنفسك </p>
+                </div>
+                <div class="col-md-2 text-right">
+                    <h4 style="font-size: 12px;"> سنديان </h4>
+                    <p style="font-size: 11px ;"> أنشئ الموقع بنفسك </p>
+                </div>
+
+            </div>
+            <div class="row text-right">
+                <div class="col-md-2 text-right col-lg-offset-8">
+                    <h4 style="font-size: 12px;"> سنديان </h4>
+                    <p style="font-size: 11px ;"> أنشئ الموقع بنفسك </p>
+                </div>
+                <div class="col-md-2 text-right ">
+                    <h4 style="font-size: 12px;"> سنديان </h4>
+                    <p style="font-size: 11px ;"> أنشئ الموقع بنفسك </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="javaS.js"></script>
+
+</body>
+
+</html>
