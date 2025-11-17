@@ -287,6 +287,7 @@
             margin-top: 10px;
             margin-bottom: 10px;
             justify-content: center;
+            
         }
 
         .btn-barunder {
@@ -376,10 +377,28 @@
         .p-under-content {
             font-size: 16px;
         }
+
+        #carteShoping { 
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            height: 80%;
+            width: 40%;
+            background-color: #444444;   
+            z-index: 10000;
+            padding: 20px ;
+            border-radius: 15px ;
+            display: none;
+            color: white;
+            overflow-y: scroll;
+            
+        }
     </style>
 </head>
 
 <body>
+    
     <!--  Start navbar -->
     <nav class="navbar hidden-xs hidden-sm " style="background: #444444; border-radius: 0px ; ">
         <div class="container ">
@@ -417,8 +436,8 @@
                         <i class="fa-solid fa-user" style="color: white;"></i>
                     </button>
                 </li>
-                <li><a href="" style="color: white; font-size: 18px ;padding: 22px;">
-                        <i class="fa-solid fa-cart-shopping"></i>
+                <li id="shoppingIcon"><a style="color: white; font-size: 18px ;padding: 22px;">
+                        <i  class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </li>
                 <li><a href="#" style="color: white;font-size: 18px ;padding: 22px;">
@@ -494,6 +513,11 @@
         </div>
     </section>
 
+    <!-- start carteShoping -->
+    <section id="carteShoping">
+    </section>
+    <!-- end carteShoping -->
+
     <!-- End Contant under the navbar  -->
     <!-- Start section -->
     <section class="container content-icon">
@@ -504,7 +528,7 @@
                 <div class="row" id="services-Container">
                 </div>
                 <div class="row text-center">
-                    <button class="btn btn-under-content">
+                    <button class="btn btn-under-content" id="btnShowAll">
                         عرض المزيد
                     </button>
                 </div>
@@ -626,8 +650,8 @@
                 <form action="">
                     <div class="form-group ">
                         <label for="" style="font-size: 14px ">بحث</label>
-                        <input type="text" class="input-lg form-control" style="border: 1px solid black;
-                border-radius: 0px ; background-color: white;">
+                        <input type="text" id="searchKeyUp" class="input-lg form-control" style="border: 1px solid black;
+                        border-radius: 0px ; background-color: white;">
                     </div>
                 </form>
                 <h4 style="margin-top: 30px ;">الأقسام </h4>
