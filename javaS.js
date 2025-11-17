@@ -67,7 +67,7 @@
     },
     {
         imgSrc:
-        "https://khamsat.hsoubcdn.com/images/services/372354/77f6f294a998686e8379a8c9a9ee64cd.jpg",
+        "https://khamsat.hsoubcdn.com/images/services/1764073/abdedb19e2343a88014abf352b0c850a.jpg?s=small",
         title: " تصميم هوية بصرية احترافية ",
         desc: " تصميم / تصميم هوية بصرية ",
         price: "50",
@@ -76,7 +76,7 @@
     },
     {
         imgSrc:
-        "https://khamsat.hsoubcdn.com/images/services/679802/fd56a795b5e7aa0658ff4498e48c5f02.jpg?s=small",
+        "https://khamsat.hsoubcdn.com/images/services/2403506/2c04d3620489f4407de936e987518a87.jpg?s=small",
         title: "تطوير موقع شخصي",
         desc: " تصميم / تصميم هوية بصرية ",
         price: "12",
@@ -253,6 +253,12 @@
 
     let carte = [];
 
+    // function start in page one
+    
+
+    // Declear Grlobal variable
+    let totalPrice = 0;
+
     let container = document.getElementById("categoryContainer");
     let contentImg = document.getElementById("services-Container");
 
@@ -286,41 +292,44 @@
         }
     }
     }
-    SetCategories();
+
+    // SetCategories();
 
     function generateMainContent() {
     contentImg.innerHTML = "";
     for (let i = 0; i < 18; i++) {
         let containerContent = `
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-            <div class="thumnal text-right thumnal-content">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"> 
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="${mainContent[i].imgSrc}" alt="Avatar" class="img-responsive">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                <div class="thumnal text-right thumnal-content" onClick="showItem(${i})">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"> 
+                        <a href="itemPage.html" onClick="showItem(${i})">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="${mainContent[i].imgSrc}" alt="Avatar" class="img-responsive">
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
+                    <div class="caption text-right">    
+                        <h4>${mainContent[i].title}</h4>
+                        <p>${mainContent[i].desc}</p>
+                        <div class="price-box" style=" margin-bottom: 20px ;"> 
+                            <span style="color: #fa9747;"><i class="fa-solid fa-star "></i><i
+                                class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i><i
+                                class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i>
+                            </span>
+                            <button class="btn btn-primary btn-sm" onclick="AddToCart(${i})">اشتري الآن</button>
+                            <button class="btn btn-danger btn-sm" onclick="DeleteItem(${i})"> حذف العنصر</button>
+                            <br>
+                            <span class="price">$${mainContent[i].price} </span>
+                        </div>
+                    </div>  
                 </div>
-                <div class="caption text-right">    
-                    <h4>${mainContent[i].title}</h4>
-                    <p>${mainContent[i].desc}</p>
-                    <div class="price-box" style=" margin-bottom: 20px ;"> 
-                        <span style="color: #fa9747;"><i class="fa-solid fa-star "></i><i
-                            class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i><i
-                            class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i>
-                        </span>
-                        <button class="btn btn-primary btn-sm" onclick="AddToCart(${i})">اشتري الآن</button>
-                        <button class="btn btn-danger btn-sm" onclick="DeleteItem(${i})"> حذف العنصر</button>
-                        <br>
-                        <span class="price">$${mainContent[i].price} </span>
-                    </div>
-                </div>  
-            </div>
-        </div>`;
+            </div>`;
         contentImg.innerHTML += containerContent;
     }
     }
-    generateMainContent();
 
     function DeleteItem(index) {
     let confirmDelete = confirm("هل أنت متأكد من حذف هذا العنصر؟");
@@ -345,31 +354,33 @@
         mainContent[i].saylerStatus === Qualefication
         ) {
         let containerContent = `
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-                <div class="thumnal text-right thumnal-content">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"> 
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="${mainContent[i].imgSrc}" alt="Avatar" class="img-responsive">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                    <div class="thumnal text-right thumnal-content" >
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"> 
+                            <a herf="itemPage.html" onClick="showItem(${i})">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="${index.imgSrc}" alt="Avatar" class="img-responsive">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="caption text-right">    
+                            <h4>${mainContent[i].title}</h4>
+                            <p>${mainContent[i].desc}</p>
+                            <div class="price-box" style=" margin-bottom: 20px ;"> 
+                                <span style="color: #fa9747;"><i class="fa-solid fa-star "></i><i
+                                    class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i><i
+                                    class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i>
+                                </span>
+                                <button class="btn btn-primary btn-sm" onclick="generateMainContent(${i})">اشتري الآن</button>
+                                <button class="btn btn-danger btn-sm" onclick="DeleteItem(${i})"> حذف العنصر</button>
+                                <br>
+                                <span class="price" style="margin-bottom:20px ;">$${mainContent[i].price}</span>
                             </div>
-                        </div>
+                        </div>  
                     </div>
-                    <div class="caption text-right">    
-                        <h4>${mainContent[i].title}</h4>
-                        <p>${mainContent[i].desc}</p>
-                        <div class="price-box" style=" margin-bottom: 20px ;"> 
-                            <span style="color: #fa9747;"><i class="fa-solid fa-star "></i><i
-                                class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i><i
-                                class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i>
-                            </span>
-                            <button class="btn btn-primary btn-sm" onclick="generateMainContent(${i})">اشتري الآن</button>
-                            <button class="btn btn-danger btn-sm" onclick="DeleteItem(${i})"> حذف العنصر</button>
-                            <br>
-                            <span class="price" style="margin-bottom:20px ;">$${mainContent[i].price}</span>
-                        </div>
-                    </div>  
-                </div>
-            </div>`;
+                </div>`;
         contentImg.innerHTML += containerContent;
         } else {
         continue;
@@ -381,152 +392,183 @@
     $("#services-Container").empty();
     $.each(mainContent, function (i, index) {
         $("#services-Container").append(`
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-                <div class="thumnal text-right thumnal-content">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"> 
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="${index.imgSrc}" alt="Avatar" class="img-responsive">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                    <div class="thumnal text-right thumnal-content" >
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"> 
+                        <a herf="itemPage.html" onClick="showItem(${i})">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="${index.imgSrc}" alt="Avatar" class="img-responsive">
+                                </div>
                             </div>
+                        </a>
                         </div>
+                        <div class="caption text-right">    
+                            <h4>${index.title}</h4>
+                            <p>${index.desc}</p>
+                            <div class="price-box" style=" margin-bottom: 20px ;"> 
+                                <span style="color: #fa9747;"><i class="fa-solid fa-star "></i><i
+                                    class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i><i
+                                    class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i>
+                                </span>
+                                <button class="btn btn-primary btn-sm" onclick="AddToCart(${i})">اشتري الآن</button>
+                                <button class="btn btn-danger btn-sm" onclick="DeleteItem(${i})"> حذف العنصر</button>
+                                <br>
+                                <span class="price">$${index.price}</span>
+                            </div>
+                        </div>  
                     </div>
-                    <div class="caption text-right">    
-                        <h4>${index.title}</h4>
-                        <p>${index.desc}</p>
-                        <div class="price-box" style=" margin-bottom: 20px ;"> 
-                            <span style="color: #fa9747;"><i class="fa-solid fa-star "></i><i
-                                class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i><i
-                                class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i>
-                            </span>
-                            <button class="btn btn-primary btn-sm" onclick="AddToCart(${i})">اشتري الآن</button>
-                            <button class="btn btn-danger btn-sm" onclick="DeleteItem(${i})"> حذف العنصر</button>
-                            <br>
-                            <span class="price">$${index.price}</span>
-                        </div>
-                    </div>  
                 </div>
-            </div>
-            `);
+                `);
     });
     });
 
     function AddToCart(index) {
-    let carteItem = 
-        {
+    let carteItem = {
         imgSrc: mainContent[index].imgSrc,
         title: mainContent[index].title,
         desc: mainContent[index].desc,
         price: mainContent[index].price,
         qountity: 1,
-        };
+    };
     carte.push(carteItem);
     console.log(carte);
     }
-    let totalPrice = 0 ;
+
     $("#shoppingIcon").click(function () {
     $("#carteShoping").fadeToggle();
     generateCarteShopping();
     });
     function generateCarteShopping() {
-        totalPrice = 0 ; 
+    totalPrice = 0;
     $("#carteShoping").empty();
-            $("#carteShoping").append(`
-            <a id="closeShoppingCarte" style="font-size:18px ;color:white ; cursor: pointer;" > <i class="fa-solid fa-circle-xmark"></i><a> 
-            `);
+    $("#carteShoping").append(`
+                <a id="closeShoppingCarte" style="font-size:18px ;color:white ; cursor: pointer;" > <i class="fa-solid fa-circle-xmark"></i><a> 
+                `);
     if (carte.length !== 0) {
         $("#carteShoping").append(`
-            <h2 style="text-align:right ;margin-bottom:10px ;color:white"> سلة التسوق </h2>`)
+                <h2 style="text-align:right ;margin-bottom:10px ;color:white"> سلة التسوق </h2>`);
         $.each(carte, function (i, index) {
         $("#carteShoping").append(
             `
-            <div class="row  "style="margin-bottom:20px">
-                <div class="col-lg-8">
-                    <div class="row">
+                <div class="row  "style="margin-bottom:20px">
+                    <div class="col-lg-8">
+                        <div class="row">
                         <div class="col-lg-4">
-                            <button class="btn btn-danger" onClick="deleteItemInCarte (${i})"> حذف </button>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="text-right">
-                                <h4> ${index.title} </h4>
-                                <p> ${index.desc}</p>
-                                <p style="font-size:16px "> الكمية : ${index.qountity}</p>
-                                <p style="font-size:16px "> السعر : $${index.price}</p>
-                            </div>
+                                <button class="btn btn-danger" onClick="deleteItemInCarte (${i})"> حذف </button>
+                                </div>
+                            <div class="col-lg-8">
+                                <div class="text-right">
+                                    <h4> ${index.title} </h4>
+                                    <p> ${index.desc}</p>
+                                    <p style="font-size:16px "> الكمية : ${index.qountity}</p>
+                                    <p style="font-size:16px "> السعر : $${index.price}</p>
+                                </div>
+                                </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <img class="img-responsive" src="${index.imgSrc}" alt="">
-                </div>
-            </div>
-            `
+                    <div class="col-lg-4">
+                        <img class="img-responsive" src="${index.imgSrc}" alt="">
+                    </div>
+                    </div>
+                    `
         );
-        totalPrice += +index.price  ; 
-        
+        totalPrice += +index.price;
         });
-        $("#carteShoping").append ( 
-            `
-            
-            <h3> $${ totalPrice} : السعر الكلي  </h3>
-            `
-        )
+        $("#carteShoping").append(
+        `
+                
+                <h3> $${totalPrice} : السعر الكلي  </h3>
+                `
+        );
     } else {
         $("#carteShoping").append(
         `
-        <h3 style="text-align:center; color:white" > لا توجد اي محتويات في الصندوق <h3>`
+            <h3 style="text-align:center; color:white" > لا توجد اي محتويات في الصندوق <h3>`
         );
     }
     }
     function deleteItemInCarte(index) {
-    totalPrice -= carte[index].price; 
+    totalPrice -= carte[index].price;
     carte.splice(index, 1);
-    totalPrice = 0 ;
-    for (let i = 0 ; i > carte.length ; i++){
-        totalPrice += carte[i].price ; 
+    totalPrice = 0;
+    for (let i = 0; i > carte.length; i++) {
+        totalPrice += carte[i].price;
     }
     alert("You are delete Item form shopping carte");
     generateCarteShopping();
     }
-    $(document).on("click", "#closeShoppingCarte",function(){
-        $("#carteShoping").hide();
+    $(document).on("click", "#closeShoppingCarte", function () {
+    $("#carteShoping").hide();
     });
 
-    $("#searchKeyUp").keyup(function(){
-        let getContentInsideText = $(this).val().trim(); 
-        console.log(getContentInsideText);
-        $("#services-Container").empty();
-        let filterData ;
-        for (let i = 0 ; i < mainContent.length ; i++ ){
-            filterData = mainContent[i].title.indexOf(getContentInsideText) !== -1 ||$(this).val() === "" ;
-            if ( filterData ){
-            $("#services-Container").append(
+    $("#searchKeyUp").keyup(function () {
+    let getContentInsideText = $(this).val().trim();
+    console.log(getContentInsideText);
+    $("#services-Container").empty();
+    let filterData;
+    for (let i = 0; i < mainContent.length; i++) {
+        filterData =
+        mainContent[i].title.indexOf(getContentInsideText) !== -1 ||
+        $(this).val() === "";
+        if (filterData) {
+        $("#services-Container").append(
             `
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-            <div class="thumnal text-right thumnal-content">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"> 
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="${mainContent[i].imgSrc}" alt="Avatar" class="img-responsive">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                <div class="thumnal text-right thumnal-content">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"> 
+                        <a herf="itemPage.html" onClick="showItem(${i})">
+                        <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="${index.imgSrc}" alt="Avatar" class="img-responsive">
+                                    </div>
+                            </div>
+                            </a>
+                            </div>
+                            <div class="caption text-right">    
+                            <h4>${mainContent[i].title}</h4>
+                            <p>${mainContent[i].desc}</p>
+                            <div class="price-box" style=" margin-bottom: 20px ;"> 
+                            <span style="color: #fa9747;"><i class="fa-solid fa-star "></i><i
+                                class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i><i
+                                class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i>
+                                </span>
+                            <button class="btn btn-primary btn-sm" onclick="AddToCart(${i})">اشتري الآن</button>
+                            <button class="btn btn-danger btn-sm" onclick="DeleteItem(${i})"> حذف العنصر</button>
+                            <br>
+                            <span class="price">$${mainContent[i].price} </span>
                         </div>
-                    </div>
+                    </div>  
                 </div>
-                <div class="caption text-right">    
-                    <h4>${mainContent[i].title}</h4>
-                    <p>${mainContent[i].desc}</p>
-                    <div class="price-box" style=" margin-bottom: 20px ;"> 
-                        <span style="color: #fa9747;"><i class="fa-solid fa-star "></i><i
-                            class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i><i
-                            class="fa-solid fa-star "></i><i class="fa-solid fa-star "></i>
-                        </span>
-                        <button class="btn btn-primary btn-sm" onclick="AddToCart(${i})">اشتري الآن</button>
-                        <button class="btn btn-danger btn-sm" onclick="DeleteItem(${i})"> حذف العنصر</button>
-                        <br>
-                        <span class="price">$${mainContent[i].price} </span>
-                    </div>
-                </div>  
             </div>
-        </div>
-            `)
-            }
+            `
+        );
         }
-    })
+    }
+    });
+
+    //  Item page
+    function showItem(index) {
+    
+    $("#item-photo").empty();
+    localStorage.setItem("index" ,index )
+    let photo = parseInt(localStorage.getItem("index" )) ; 
+    $("#item-photo").append(
+        `
+        <img src="${mainContent[photo].imgSrc}" alt="">
+        `
+    );
+    console.log(mainContent[photo].imgSrc);
+    }
+
+
+    // fuction for the page one 
+    if ($("#pageOne").length) {
+        SetCategories();
+        generateMainContent();
+    }
+    if ($("#pageTow").length) {
+    let photo = parseInt(localStorage.getItem("index" )) ; 
+    
+    $(".item-photo").css("background-image",`url(${mainContent[photo].imgSrc})`)
+    }
